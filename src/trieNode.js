@@ -17,7 +17,7 @@ class TrieNode {
 
   /**
    * @public
-   * @returns {string}
+   * @returns {*}
    */
   getChar() {
     return this._char;
@@ -40,6 +40,14 @@ class TrieNode {
   }
 
   /**
+   * @public
+   * @return {Map}
+   */
+  getChildren() {
+    return this._children;
+  }
+
+  /**
    * @internal
    * @param {boolean} endOfWord
    */
@@ -57,7 +65,7 @@ class TrieNode {
 
   /**
    * @internal
-   * @param {string} char
+   * @param {*} char
    */
   addChild(char) {
     const childNode = new TrieNode(char);
@@ -67,7 +75,7 @@ class TrieNode {
 
   /**
    * @internal
-   * @param {string} char
+   * @param {*} char
    * @return {boolean}
    */
   removeChild(char) {
@@ -76,7 +84,7 @@ class TrieNode {
 
   /**
    * @public
-   * @param {string} char
+   * @param {*} char
    * @return {TrieNode}
    */
   getChild(char) {
@@ -85,7 +93,7 @@ class TrieNode {
 
   /**
    * @public
-   * @param {string} char
+   * @param {*} char
    * @return {boolean}
    */
   hasChild(char) {

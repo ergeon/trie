@@ -23,11 +23,11 @@ describe('Trie unit tests', () => {
       expect(trie.insert('')).to.be.instanceof(TrieNode);
     });
 
-    it('throws an exception for none string words', () => {
+    it('throws an exception for none words', () => {
       expect(() => trie.insert()).to.throw(Error)
         .and.to.have.property(
           'message',
-          'Trie.insert expects a string word'
+          'Trie.insert expects a string or array as word'
         );
     });
   });
